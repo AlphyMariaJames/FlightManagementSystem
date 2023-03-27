@@ -1,0 +1,37 @@
+<br>
+<h3 style="text-align: center;">Available Schedules</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+ 
+            <th scope="col">Schedule Id</th>
+            <th scope="col">Flight ID</th>
+            <th scope="col">Total Seats</th>
+            <th scope="col">Is blocked</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col"> Price of a Seat</th>
+            <th scope="col">Date of Departure</th>
+            <th scope="col">Date of Arrival</th>
+            <th scope="col">Book Ticket</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let scheduleFlight of scheduleFlights, index as i">
+            <td>{{scheduleFlight.scheduleFlightId}}</td>
+            <td>{{scheduleFlight.flight.flightId}}</td>
+            <td>{{scheduleFlight.flight.totalSeats}}</td>
+            <td>{{scheduleFlight.flight.status}}</td>
+            <td>{{scheduleFlight.schedule.source}}</td>
+            <td>{{scheduleFlight.schedule.destination}}</td>
+            <td>{{scheduleFlight.price}}</td>
+            <td>{{scheduleFlight.schedule.deptDateTime}}</td>
+            <td>{{scheduleFlight.schedule.arrDateTime}}</td>
+            <td><button class="btn btn-primary" style="margin: 1%;"
+                    (click)="book(scheduleFlight.flight.flightId,scheduleFlight.schedule.source,
+                    scheduleFlight.schedule.destination, scheduleFlight.schedule.deptDateTime,scheduleFlight.price)">Book
+                    Ticket</button></td>
+        </tr>
+ 
+    </tbody>
+</table>

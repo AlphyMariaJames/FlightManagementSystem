@@ -1,0 +1,32 @@
+<br>
+<h3 style="text-align: center;">All Flights</h3>
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">Flight ID</th>
+      <th scope="col">Flight Code</th>
+      <th scope="col">Total Seats</th>
+      <th scope="col">Is Blocked</th>
+      <th scope="col">Airline Code</th>
+      <th scope="col">Schedule</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flight of flights, index as i">
+      <td>{{flight.flightId}}</td>
+      <td>{{flight.flightCode}}</td>
+
+      <td>{{flight.totalSeats}}</td>
+      <td>{{flight.status}}</td>
+      <td>{{flight.airlineCode}}</td>
+      <td><button class="btn btn-primary" style="margin: 1%;" (click)="schedule(flight.flightId)"
+        >Schedule</button></td>
+      <td><button class="btn btn-primary" style="margin: 1%;" (click)="update(flight.flightId)"
+          >Edit</button></td>
+      <td><button class="btn btn-danger" style="margin: 1%;" (click)="delete(flight)">Delete</button></td>
+    </tr>
+ 
+  </tbody>
+</table>

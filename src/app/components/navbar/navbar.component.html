@@ -1,0 +1,80 @@
+<div id="app">
+    <nav class="navbar navbar-expand" style="background-color: rgb(8, 8, 136); color: rgb(253, 252, 252);">
+     <a href="#" class="navbar-brand" style="color: aliceblue; font-weight: 600; font-size: x-large;"><h1>FlightBooking</h1></a>
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+       
+        <li class="nav-item" style="color: aliceblue;" *ngIf="showAdminBoard">
+          <a href="/admin" class="nav-link" routerLink="admin" style="color: aliceblue;"><h6>Home</h6></a>
+        </li>
+    
+        <li class="nav-item" *ngIf="showUserBoard">
+          <a href="/user" class="nav-link" routerLink="user" style="color: aliceblue;"><h5> User Home</h5></a>
+        </li>
+  
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin/addAirline" class="nav-link" routerLink="admin/addAirline" style="color: aliceblue;"><h6>Add Airline</h6></a>
+        </li>
+  
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin/addFlight" class="nav-link" routerLink="admin/addFlight" style="color: aliceblue;"><h6>Add Flight</h6></a>
+        </li>
+
+        <li class="nav-item" *ngIf="showAdminBoard">  
+          <a href="/admin/getAirline" class="nav-link" routerLink="admin/getAirline" style="color: aliceblue;"><h6>All Airlines</h6></a>
+        </li>
+
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin/getFlights" class="nav-link" routerLink="admin/getFlights" style="color: aliceblue;"><h6>All Flights</h6></a>
+        </li>
+
+        <li class="nav-item" *ngIf="showAdminBoard">  
+          <a href="/admin/getSchedules" class="nav-link" routerLink="admin/getSchedules" style="color: aliceblue;"><h6>View Schedules</h6></a>
+        </li>
+  
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin/addDiscount" class="nav-link" routerLink="admin/addDiscount" style="color: aliceblue;"><h6>Add Discount</h6></a>
+        </li>
+
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin/getDiscounts" class="nav-link" routerLink="admin/getDiscounts" style="color: aliceblue;"><h6>View Discount</h6></a>
+        </li>
+  
+        <li class="nav-item" *ngIf="showUserBoard">
+          <a href="/viewSchedule" class="nav-link" routerLink="viewSchedule" style="color: aliceblue;"><h5>Search Schedules</h5></a>
+        </li>
+
+        <li class="nav-item" *ngIf="showUserBoard">  
+          <a href="/history" class="nav-link" routerLink="history" style="color: aliceblue;"><h5>View History</h5></a>
+        </li>
+  
+        <li class="nav-item" *ngIf="showUserBoard">
+          <a href="/viewTicket" class="nav-link" routerLink="viewTicket" style="color: aliceblue;"><h5>View Ticket</h5></a>
+        </li>
+  
+      </ul>
+  
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a href="/signup" class="nav-link" routerLink="signup">Sign Up</a>
+        </li>
+
+        <li class="nav-item">  
+          <a href="/login" class="nav-link" routerLink="login">Login</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">  
+        <li class="nav-item">
+          <a href="/user" class="nav-link" routerLink="user" style="color: aliceblue;"><h5>{{ username }}</h5></a>
+        </li>
+
+        <li class="nav-item">
+          <button class="btn btn-outline-primary" style="color: aliceblue;" type="submit"
+            (click)="logout()"><h5>LogOut</h5></button>
+        </li>
+
+      </ul>
+  
+    </nav>
+  
+  </div>

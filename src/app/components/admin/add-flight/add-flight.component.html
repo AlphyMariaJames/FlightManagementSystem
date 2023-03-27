@@ -1,0 +1,45 @@
+<br>
+<div class="card" style=" margin-left: 10rem;margin-right: 10rem; ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="card-header" style="text-align: center">
+            <h3>Add Flight</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Flight Code: </th>
+                        <td><input type="text" [(ngModel)]="newFlight.flightCode" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Seats: </th>
+                        <td><input type="text" [(ngModel)]="newFlight.totalSeats" /> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Is Blocked: </th>
+                        <td colspan="3">
+                            <select [(ngModel)]="newFlight.status" style="width: 30%;" class="form-select"
+                                aria-label="Default select example">
+                                <option value="True">Blocked</option>
+                                <option value="False">Not Blocked</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Airline Code: </th>
+                        <td><input type="text" [(ngModel)]="newFlight.airlineCode" /> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td><button (click)="createNewFlight()" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Submit</button>
+                            <button (click)="resetForm()" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Clear This Form</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

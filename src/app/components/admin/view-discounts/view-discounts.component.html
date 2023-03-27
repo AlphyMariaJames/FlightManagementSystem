@@ -1,0 +1,21 @@
+<br>
+<h3 style="text-align: center;">All Discounts</h3>
+<table class="table table-striped" >
+    <thead>
+      <tr>
+        <th scope="col">Discount ID</th>
+        <th scope="col">Discount Code</th>
+        <th scope="col">Discount Percentage</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let discount of discounts, index as i">
+        <td>{{discount.id}}</td>
+        <td>{{discount.discountCode}}</td>
+        <td>{{discount.discountPercent}}%</td>
+        <td><button class="btn btn-danger" style="margin: 1%;" (click)="delete(discount)">Delete</button></td>
+      </tr>
+     
+    </tbody>
+  </table>

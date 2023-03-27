@@ -1,0 +1,29 @@
+<br>
+<div class="card" style=" margin-left: 10rem;margin-right: 10rem; ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="card-header" style="text-align: center">
+            <h3>View Booking</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">PNR No: </th>
+                        <td><input type="text" [(ngModel)]="pnrNo"  /></td>
+                    </tr>
+                   
+                    <tr>
+                        <th scope="row"></th>
+                        <td><button (click)="viewTicket(pnrNo)" type="button" class="btn btn-primary"
+                                style="margin: 2%;">View Ticket Details</button>
+                            <button (click)="resetForm()" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Clear
+                                This
+                                Form</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

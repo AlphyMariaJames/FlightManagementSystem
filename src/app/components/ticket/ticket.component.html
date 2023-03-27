@@ -1,0 +1,93 @@
+<br>
+<div class="card" style=" margin-left: 10rem;margin-right: 10rem; ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="card-header" style="text-align: center">
+            <h3>Ticket Details</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">PNR Number: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.id" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Flight Id: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.flightId" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Source: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.origin" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Destination: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.destination" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Fare: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.fare" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Date of Flight: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.flightDate" [disabled]="true" /> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Date of Booking: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.bookingDate" [disabled]="true" /> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email Id: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.emailId" [disabled]="true"/> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Number of passengers: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.noOfPassengers" [disabled]="true"/> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Passengers: </th>
+                        <td>
+                            <div class="accordion acordionStyle" id="accordionExample">
+                                <div class="accordion-item" *ngFor="let passenger of bookingRecord.passengers">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Passenger
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Firstname of passenger: </th>
+                                                        <td><input type="text" [(ngModel)]="passenger.firstName" [disabled]="true"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Lastname of passenger: </th>
+                                                        <td><input type="text" [(ngModel)]="passenger.lastName" [disabled]="true" /> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Gender: </th>
+                                                        <td><input type="text" [(ngModel)]="passenger.gender" [disabled]="true"/> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Meal Type: </th>
+                                                        <td><input type="text" [(ngModel)]="passenger.meal" [disabled]="true"/> </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+ 
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

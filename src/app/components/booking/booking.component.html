@@ -1,0 +1,119 @@
+<br>
+<div class="card" style=" margin-left: 10rem;margin-right: 10rem; ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="card-header" style="text-align: center">
+            <h3>Book Ticket</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Flight Id: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.flightId" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Source: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.origin" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Destination: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.destination" [disabled]="true" /></td>
+                    </tr>
+ 
+                    <tr>
+                        <th scope="row">Date of Flight: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.flightDate" [disabled]="true" /> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Charge for 1 passenger: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.fare" [disabled]="true" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email Id: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.emailId" /> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Discount Code: </th>
+                        <td colspan="3">
+                            <select name="srcAirport"  style="width: 30%;" class="form-control" [(ngModel)]="bookingRecord.discountCode">
+                                <option *ngFor="let discount of discounts" [value]="discount.discountCode">{{discount.discountCode}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Number of passengers: </th>
+                        <td><input type="text" [(ngModel)]="bookingRecord.noOfPassengers" (input)="passengerCount()"/> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Passengers: </th>
+                        <td>
+                            <div class="accordion acordionStyle" id="accordionExample">
+                                <div class="accordion-item" *ngFor="let passenger of bookingRecord.passengers">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Passenger
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Firstname of passenger: </th>
+
+                                                       <td><input type="text" [(ngModel)]="passenger.firstName" /> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Lastname of passenger: </th>
+                                                        <td><input type="text" [(ngModel)]="passenger.lastName" /> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Gender: </th>
+                                                        <td>
+                                                            <select [(ngModel)]="passenger.gender" style="width: 55%;"
+                                                                class="form-select" aria-label="Default select example">
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+                                                                <option value="Others">Others</option>
+                                                            </select>
+                                                        </td>
+ 
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Meal Type: </th>
+                                                        <td>
+                                                            <select [(ngModel)]="passenger.meal" style="width: 55%;"
+                                                                class="form-select" aria-label="Default select example">
+                                                                <option value="VEG">Vegetarian</option>
+                                                                <option value="NON_VEG">Non-Vegetarian</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </td>
+                    </tr>
+ 
+                    <tr>
+                        <th scope="row"></th>
+                        <td><button (click)="bookTicket(bookingRecord)" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Book Ticket</button>
+                            <button (click)="resetForm()" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Clear
+                                This
+                                Form</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

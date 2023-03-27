@@ -1,0 +1,94 @@
+<br>
+<h3 style="text-align: center;">Booking History</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">PNR No</th>
+      <th scope="col">Flight ID</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Flight Date</th>
+      <th scope="col">Booking Date</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">No: of Passengers</th>
+      <th scope="col">Passenger Details</th>
+      <th scope="col">Cancel Ticket</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bookingRecord of bookingRecords, index as i">
+      <td>{{bookingRecord.id}}</td>
+      <td>{{bookingRecord.flightId}}</td>
+      <td>{{bookingRecord.origin}}</td>
+      <td>{{bookingRecord.destination}}</td>
+      <td>{{bookingRecord.flightDate}}</td>
+      <td>{{bookingRecord.bookingDate}}</td>
+      <td>{{bookingRecord.fare}}</td>
+      <td>{{bookingRecord.noOfPassengers}}</td>
+      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+          (click)="passengerData(bookingRecord)">
+          Passenger Details
+        </button></td>
+        <td><button class="btn btn-danger" style="margin: 1%;" (click)="cancel(bookingRecord)">Cancel Ticket</button></td>
+    </tr>
+ 
+  </tbody>
+</table>
+ 
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Passenger Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="accordion acordionStyle" id="accordionExample">
+          <div class="accordion-item" *ngFor="let passenger of bookingRecord.passengers">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Passenger
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Firstname of passenger: </th>
+                      <td><input type="text" [(ngModel)]="passenger.firstName" [disabled]="true" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Lastname of passenger: </th>
+                      <td><input type="text" [(ngModel)]="passenger.lastName" [disabled]="true" /> </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Gender: </th>
+                      <td><input type="text" [(ngModel)]="passenger.gender" [disabled]="true" /> </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Meal Type: </th>
+                      <td><input type="text" [(ngModel)]="passenger.meal" [disabled]="true" /> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+ 
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>

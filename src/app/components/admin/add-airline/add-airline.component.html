@@ -1,0 +1,53 @@
+<br>
+<div class="card" style=" margin-left: 10rem;margin-right: 10rem; ">
+    <div class="card-header" style="text-align:center;">
+        <h3> Add Airline</h3>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Airline Name: </th>
+                        <td><input (blur)="validateName(); enableButton();" type="text" [(ngModel)]="newAirline.airlineName" />
+                            <div class="alert-danger" *ngIf="nameFlag">
+                                Minimum length for Airline name is 3
+                            </div></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contact Number</th>
+                        <td><input (blur)="validatePhone(); enableButton();" type="text" [(ngModel)]="newAirline.contactNumber" name="phone" required minlength="10" #phone="ngModel"/>
+                            <div class="alert-danger" *ngIf="phoneFlag">
+                                Enter valid contact number
+                            </div></td>
+                    </tr>
+ 
+                    <tr>
+ 
+                        <th class="right">
+                            <label for="country">Airline Blocked:</label>
+                        </th>
+                        <td colspan="3">
+                            <select [(ngModel)]="newAirline.isBlock" style="width: 30%;" class="form-select"
+                                aria-label="Default select example" >
+                                <option value="True">Blocked</option>
+                                <option value="False">Not Blocked</option>
+                            </select>
+                        </td>
+                    </tr>
+ 
+                    <tr>
+                        <th scope="row"> </th>
+                        <td><button [disabled]="buttonFlag" (click)="createNewAirline()" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Submit</button>
+                            <button (click)="resetForm()" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Clear
+                                This
+                                Form</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

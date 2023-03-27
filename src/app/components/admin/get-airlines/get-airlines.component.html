@@ -1,0 +1,27 @@
+<br>
+<h3 style="text-align: center;">All Airlines</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Airline ID</th>
+        <th scope="col">AirlineName</th>
+        <th scope="col">ContactNumber</th>
+        <th scope="col">Flights</th>
+        <th scope="col">Is Blocked</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let airline of airlines, index as i">
+        <td>{{airline.airlineID}}</td>
+        <td>{{airline.airlineName}}</td>
+        <td>{{airline.contactNumber}}</td>
+        <td>{{airline.flightIDs}}</td>
+        <td>{{airline.isBlock}}</td>
+        <td><button class="btn btn-primary" style="margin: 1%;" (click)="update(airline)">Edit</button></td>
+        <td><button class="btn btn-danger" style="margin: 1%;" (click)="delete(airline)">Delete</button></td>
+      </tr>
+    </tbody>
+
+  </table>

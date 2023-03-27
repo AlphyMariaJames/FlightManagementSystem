@@ -1,0 +1,37 @@
+<br>
+<div class="card" style=" margin-left: 10rem;margin-right: 10rem; ">
+    <div class="card-header" style="text-align:center;">
+        <h3> Add Discount</h3>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Discount Code: </th>
+                        <td><input (blur)="validateName(); enableButton();" type="text"
+                                [(ngModel)]="discount.discountCode" />
+                            <div class="alert-danger" *ngIf="nameFlag">
+                                Minimum length for Discount Code is 3
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Discount Percentage</th>
+                        <td><input type="text" [(ngModel)]="discount.discountPercent" /></td>
+                    </tr>
+                     <tr>
+                       <th scope="row"> </th>
+                       <td><button [disabled]="buttonFlag" (click)="createNewDiscount()" type="button"
+                               class="btn btn-primary" style="margin: 2%;">Submit</button>
+                           <button (click)="resetForm()" type="button" class="btn btn-primary"
+                                style="margin: 2%;">Clear
+                                This
+                                Form</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
