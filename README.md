@@ -1,4 +1,7 @@
-Backend code - https://github.com/AlphyMariaJames/FlightManagementSystem-Backend
+Project Description:-
+FlightManagementSystem, a Website which facilitates management of airlines/ flights/ schedules, booking of flight tickets and user registration. This is the UI code base of the project. UI of the website is done in Angular JS and backend in Java. For backend we have two main microservices, one for user management and one for flight management.There are two types of users, Admin and User. Admin can add, view, update and delete airlines/ flights/ schedules/ discount promocodes. User can view schedules, book/cancel tickets and apply discount promocodes. view ticket history and view ticket with pnr number.
+
+Project Demo Video :-
 
 https://user-images.githubusercontent.com/120721753/232028324-d865d074-20cf-4163-84fe-020aa2837d21.mp4
 
@@ -6,26 +9,10 @@ https://user-images.githubusercontent.com/120721753/232028324-d865d074-20cf-4163
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
-## Development server
+## Steps to run the project
+1. clone the repository to a folder. 
+2. Clone the FlightManagementSystem-Backend (Follow the steps in README.md of FlightManagementSystem-Backend repository. Link given below)
+3. import the project to VSCode. (angular, bootstrap should be installed)
+4. Run `ng serve` in terminal. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Backend codebase - https://github.com/AlphyMariaJames/FlightManagementSystem-Backend
